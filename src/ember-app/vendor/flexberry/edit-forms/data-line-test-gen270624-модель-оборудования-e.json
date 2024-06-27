@@ -1,0 +1,23 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Manufacturer",
+      "projection": "ОрганизацияL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Модель оборудования",
+  "name": "DataLineTestGen270624МодельОборудованияE",
+  "className": "МодельОборудованияE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "equipment-model",
+      "modelProjection": "МодельОборудованияE"
+    }
+  ]
+}

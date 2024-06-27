@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-test-gen270624-сотрудник-e",
+  "editForm": "data-line-test-gen270624-сотрудник-e",
+  "external": false,
+  "caption": "Сотрудник",
+  "name": "DataLineTestGen270624СотрудникL",
+  "className": "СотрудникL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "employee",
+      "modelProjection": "СотрудникL"
+    }
+  ]
+}

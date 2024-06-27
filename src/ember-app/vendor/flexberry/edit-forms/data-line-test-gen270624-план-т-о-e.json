@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Equipment",
+      "projection": "ОборудованиеL",
+      "detailModelName": null
+    },
+    {
+      "master": "maintenanceOperation",
+      "displayAttributeName": "name",
+      "required": true,
+      "relationName": "ScheduledMaintenanceOperation.MaintenanceOperation",
+      "projection": "ОперацияТОL",
+      "detailModelName": "scheduled-maintenance-operation"
+    }
+  ],
+  "external": false,
+  "caption": "План ТО",
+  "name": "DataLineTestGen270624ПланТОE",
+  "className": "ПланТОE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "maintenance-plan",
+      "modelProjection": "ПланТОE"
+    }
+  ]
+}

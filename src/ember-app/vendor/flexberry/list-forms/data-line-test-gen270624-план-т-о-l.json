@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-test-gen270624-план-т-о-e",
+  "editForm": "data-line-test-gen270624-план-т-о-e",
+  "external": false,
+  "caption": "План ТО",
+  "name": "DataLineTestGen270624ПланТОL",
+  "className": "ПланТОL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "maintenance-plan",
+      "modelProjection": "ПланТОL"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Периодичность",
+  "name": "DataLineTestGen270624PeriodicityE",
+  "className": "PeriodicityE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "periodicity",
+      "modelProjection": "PeriodicityE"
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+﻿{
+  "applicationCaption": "Maintenance Management System",
+  "applicationTitle": "Maintenance",
+  "items": [
+    {
+      "link": null,
+      "menuName": "оборудование",
+      "caption": "Оборудование",
+      "title": "Оборудование",
+      "children": [
+        {
+          "link": "data-line-test-gen270624-оборудование-l",
+          "menuName": null,
+          "caption": "Оборудование",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-договор-l",
+          "menuName": null,
+          "caption": "Договоры",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "журнал-т-о",
+      "caption": "Журнал ТО",
+      "title": "Журнал ТО",
+      "children": [
+        {
+          "link": "data-line-test-gen270624-программа-т-о-l",
+          "menuName": null,
+          "caption": "Программа ТО",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-план-т-о-l",
+          "menuName": null,
+          "caption": "План ТО",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-факт-т-о-l",
+          "menuName": null,
+          "caption": "Факт ТО",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "справочники",
+      "caption": "Справочники",
+      "title": "Справочники",
+      "children": [
+        {
+          "link": "data-line-test-gen270624-periodicity-l",
+          "menuName": null,
+          "caption": "Периоды",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-модель-оборудования-l",
+          "menuName": null,
+          "caption": "Модели оборудования",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-организация-l",
+          "menuName": null,
+          "caption": "Организации",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-расположение-l",
+          "menuName": null,
+          "caption": "Расположение",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-сотрудник-l",
+          "menuName": null,
+          "caption": "Сотрудники",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-статус-оборудования-l",
+          "menuName": null,
+          "caption": "Статусы оборудования",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "data-line-test-gen270624-тип-оборудования-l",
+          "menuName": null,
+          "caption": "Типы оборудования",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

@@ -1,0 +1,54 @@
+﻿{
+  "name": "EquipmentType",
+  "modelName": "equipment-type",
+  "className": "ТипОборудования",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТипОборудованияE",
+      "modelName": "equipment-type",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "ТипОборудованияL",
+      "modelName": "equipment-type",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

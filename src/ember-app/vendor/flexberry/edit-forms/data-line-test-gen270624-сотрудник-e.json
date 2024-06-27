@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Сотрудник",
+  "name": "DataLineTestGen270624СотрудникE",
+  "className": "СотрудникE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "employee",
+      "modelProjection": "СотрудникE"
+    }
+  ]
+}

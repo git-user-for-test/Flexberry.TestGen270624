@@ -1,0 +1,141 @@
+<h3 class="ui header">{{t "forms.data-line-test-gen270624-план-т-о-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-план-т-о-e.startDate-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.startDate
+      class=(if (v-get validationModel "startDate" "isInvalid") "error")
+      data-test-data-line-test-gen270624-план-т-о-e-startDate=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "startDate" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-план-т-о-e.endDate-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.endDate
+      class=(if (v-get validationModel "endDate" "isInvalid") "error")
+      data-test-data-line-test-gen270624-план-т-о-e-endDate=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "endDate" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-план-т-о-e.equipment-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.equipment
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="equipment"
+      projection="ОборудованиеL"
+      title=(t "forms.data-line-test-gen270624-план-т-о-e.equipment-caption")
+      readonly=readonly
+      componentName="equipmentLookup"
+      class=(if (v-get validationModel "equipment" "isInvalid") "error")
+      data-test-data-line-test-gen270624-план-т-о-e-equipment=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "equipment" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.equipment.model.name
+      class=(if (v-get validationModel.equipment.model "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-план-т-о-e.equipment.model.name-caption")
+      data-test-data-line-test-gen270624-план-т-о-e-equipment-model-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.equipment.model "name" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.equipment.type.name
+      class=(if (v-get validationModel.equipment.type "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-план-т-о-e.equipment.type.name-caption")
+      data-test-data-line-test-gen270624-план-т-о-e-equipment-type-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.equipment.type "name" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.equipment.status.name
+      class=(if (v-get validationModel.equipment.status "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-план-т-о-e.equipment.status.name-caption")
+      data-test-data-line-test-gen270624-план-т-о-e-equipment-status-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.equipment.status "name" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.equipment.accountable.surname
+      class=(if (v-get validationModel.equipment.accountable "surname" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-план-т-о-e.equipment.accountable.surname-caption")
+      data-test-data-line-test-gen270624-план-т-о-e-equipment-accountable-surname=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.equipment.accountable "surname" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.equipment.serviceContract.number
+      class=(if (v-get validationModel.equipment.serviceContract "number" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-план-т-о-e.equipment.serviceContract.number-caption")
+      data-test-data-line-test-gen270624-план-т-о-e-equipment-serviceContract-number=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.equipment.serviceContract "number" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.equipment.location.name
+      class=(if (v-get validationModel.equipment.location "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-план-т-о-e.equipment.location.name-caption")
+      data-test-data-line-test-gen270624-план-т-о-e-equipment-location-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.equipment.location "name" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-план-т-о-e.scheduledMaintenanceOperation-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="scheduledMaintenanceOperationGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.scheduledMaintenanceOperation
+      content=model.scheduledMaintenanceOperation
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "scheduledMaintenanceOperation" "isInvalid") "error")
+      data-test-data-line-test-gen270624-план-т-о-e-scheduledMaintenanceOperation=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "scheduledMaintenanceOperation" "message")}}
+  </div>
+</form>

@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-test-gen270624-оборудование-e",
+  "editForm": "data-line-test-gen270624-оборудование-e",
+  "external": false,
+  "caption": "Оборудование",
+  "name": "DataLineTestGen270624ОборудованиеL",
+  "className": "ОборудованиеL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "hardware",
+      "modelProjection": "ОборудованиеL"
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+﻿{
+  "name": "FactOfTheMaintenance",
+  "modelName": "fact-of-the-maintenance",
+  "className": "ФактТО",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "startDate",
+      "type": "date",
+      "flexberryType": "NullableDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "endDate",
+      "type": "date",
+      "flexberryType": "NullableDateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "scanProtocol",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "successfully",
+      "type": "boolean",
+      "flexberryType": "bool",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": false,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "equipment",
+      "relatedTo": "hardware",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "maintenancePlan",
+      "relatedTo": "maintenance-plan",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "factOperationOfTheMaintenance",
+      "relatedTo": "fact-operation-of-the-maintenance",
+      "inverse": "factOfTheMaintenance"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ФактТОE",
+      "modelName": "fact-of-the-maintenance",
+      "attrs": [
+        {
+          "name": "startDate",
+          "caption": "Дата начала",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "endDate",
+          "caption": "Дата окончания",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "scanProtocol",
+          "caption": "Скан протокола",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "successfully",
+          "caption": "Успешно",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Номер",
+          "lookupValueField": "name",
+          "relationName": "Equipment",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Номер",
+              "hidden": true,
+              "index": 5
+            }
+          ],
+          "index": 4,
+          "type": "standard",
+          "caption": "Оборудование",
+          "name": "equipment",
+          "relatedTo": "hardware",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "MaintenancePlan",
+          "belongsTo": [
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "MaintenancePlan.Equipment",
+              "belongsTo": [
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "MaintenancePlan.Equipment.Type",
+                  "belongsTo": [],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "name",
+                      "caption": "Тип оборудования",
+                      "hidden": false,
+                      "index": 10
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "type",
+                  "relatedTo": "equipment-type",
+                  "inverse": null
+                },
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "MaintenancePlan.Equipment.Model",
+                  "belongsTo": [
+                    {
+                      "lookupValue": null,
+                      "lookupValueField": null,
+                      "relationName": "MaintenancePlan.Equipment.Model.Manufacturer",
+                      "belongsTo": [],
+                      "hidden": false,
+                      "attrs": [
+                        {
+                          "name": "name",
+                          "caption": "Производитель оборудования",
+                          "hidden": false,
+                          "index": 12
+                        }
+                      ],
+                      "index": -1,
+                      "type": null,
+                      "caption": "",
+                      "name": "manufacturer",
+                      "relatedTo": "organization",
+                      "inverse": null
+                    }
+                  ],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "name",
+                      "caption": "Модель оборудования",
+                      "hidden": false,
+                      "index": 11
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "model",
+                  "relatedTo": "equipment-model",
+                  "inverse": null
+                }
+              ],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "name",
+                  "caption": "Номер оборудования",
+                  "hidden": false,
+                  "index": 9
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "equipment",
+              "relatedTo": "hardware",
+              "inverse": null
+            }
+          ],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "startDate",
+              "caption": "Дата начала",
+              "hidden": false,
+              "index": 7
+            },
+            {
+              "name": "endDate",
+              "caption": "Дата окончания",
+              "hidden": false,
+              "index": 8
+            }
+          ],
+          "index": 6,
+          "type": "default",
+          "caption": "План ТО",
+          "name": "maintenancePlan",
+          "relatedTo": "maintenance-plan",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ФактОперацияТОE",
+          "caption": "Фактические операции ТО",
+          "name": "factOperationOfTheMaintenance",
+          "relatedTo": "fact-operation-of-the-maintenance",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ФактТОL",
+      "modelName": "fact-of-the-maintenance",
+      "attrs": [
+        {
+          "name": "startDate",
+          "caption": "Дата начала",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "endDate",
+          "caption": "Дата окончания",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "scanProtocol",
+          "caption": "Скан протокола",
+          "hidden": false,
+          "index": 2
+        },
+        {
+          "name": "successfully",
+          "caption": "Успешно",
+          "hidden": false,
+          "index": 3
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Equipment",
+          "belongsTo": [
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Equipment.Model",
+              "belongsTo": [
+                {
+                  "lookupValue": null,
+                  "lookupValueField": null,
+                  "relationName": "Equipment.Model.Manufacturer",
+                  "belongsTo": [],
+                  "hidden": false,
+                  "attrs": [
+                    {
+                      "name": "name",
+                      "caption": "Производитель оборудования",
+                      "hidden": false,
+                      "index": 6
+                    }
+                  ],
+                  "index": -1,
+                  "type": null,
+                  "caption": "",
+                  "name": "manufacturer",
+                  "relatedTo": "organization",
+                  "inverse": null
+                }
+              ],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "name",
+                  "caption": "Модель оборудования",
+                  "hidden": false,
+                  "index": 5
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "model",
+              "relatedTo": "equipment-model",
+              "inverse": null
+            },
+            {
+              "lookupValue": null,
+              "lookupValueField": null,
+              "relationName": "Equipment.Type",
+              "belongsTo": [],
+              "hidden": false,
+              "attrs": [
+                {
+                  "name": "name",
+                  "caption": "Тип оборудования",
+                  "hidden": false,
+                  "index": 7
+                }
+              ],
+              "index": -1,
+              "type": null,
+              "caption": "",
+              "name": "type",
+              "relatedTo": "equipment-type",
+              "inverse": null
+            }
+          ],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Номер",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Номер",
+          "name": "equipment",
+          "relatedTo": "hardware",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "MaintenancePlan",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "startDate",
+              "caption": "Дата начала",
+              "hidden": false,
+              "index": 8
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Дата начала",
+          "name": "maintenancePlan",
+          "relatedTo": "maintenance-plan",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

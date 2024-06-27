@@ -1,0 +1,311 @@
+<h3 class="ui header">{{t "forms.data-line-test-gen270624-оборудование-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.name
+      class=(if (v-get validationModel "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-оборудование-e.name-caption")
+      data-test-data-line-test-gen270624-оборудование-e-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "name" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.productionDate-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.productionDate
+      class=(if (v-get validationModel "productionDate" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-productionDate=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "productionDate" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.dateOfCommissioning-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.dateOfCommissioning
+      class=(if (v-get validationModel "dateOfCommissioning" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-dateOfCommissioning=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "dateOfCommissioning" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.warrantyPeriod-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.warrantyPeriod
+      class=(if (v-get validationModel "warrantyPeriod" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-warrantyPeriod=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "warrantyPeriod" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.operatingTime
+      class=(if (v-get validationModel "operatingTime" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-оборудование-e.operatingTime-caption")
+      data-test-data-line-test-gen270624-оборудование-e-operatingTime=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "operatingTime" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.runDate-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.runDate
+      class=(if (v-get validationModel "runDate" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-runDate=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "runDate" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.description
+      class=(if (v-get validationModel "description" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-оборудование-e.description-caption")
+      data-test-data-line-test-gen270624-оборудование-e-description=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "description" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.type-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.type
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="type"
+      projection="ТипОборудованияL"
+      title=(t "forms.data-line-test-gen270624-оборудование-e.type-caption")
+      readonly=readonly
+      componentName="typeLookup"
+      class=(if (v-get validationModel "type" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-type=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "type" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.status-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.status
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="status"
+      projection="СтатусОборудованияL"
+      title=(t "forms.data-line-test-gen270624-оборудование-e.status-caption")
+      readonly=readonly
+      componentName="statusLookup"
+      class=(if (v-get validationModel "status" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-status=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "status" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.accountable-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.accountable
+      displayAttributeName="surname"
+      autocomplete=true
+      relationName="accountable"
+      projection="СотрудникL"
+      title=(t "forms.data-line-test-gen270624-оборудование-e.accountable-caption")
+      readonly=readonly
+      componentName="accountableLookup"
+      class=(if (v-get validationModel "accountable" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-accountable=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "accountable" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.accountable.surname
+      class=(if (v-get validationModel.accountable "surname" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-оборудование-e.accountable.surname-caption")
+      data-test-data-line-test-gen270624-оборудование-e-accountable-surname=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.accountable "surname" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.accountable.name
+      class=(if (v-get validationModel.accountable "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-оборудование-e.accountable.name-caption")
+      data-test-data-line-test-gen270624-оборудование-e-accountable-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.accountable "name" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.accountable.patronymic
+      class=(if (v-get validationModel.accountable "patronymic" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-оборудование-e.accountable.patronymic-caption")
+      data-test-data-line-test-gen270624-оборудование-e-accountable-patronymic=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.accountable "patronymic" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.serviceContract-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.serviceContract
+      displayAttributeName="number"
+      autocomplete=true
+      relationName="serviceContract"
+      projection="ДоговорL"
+      title=(t "forms.data-line-test-gen270624-оборудование-e.serviceContract-caption")
+      readonly=readonly
+      componentName="serviceContractLookup"
+      class=(if (v-get validationModel "serviceContract" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-serviceContract=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "serviceContract" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.serviceContract.date-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=true
+      value=model.serviceContract.date
+      class=(if (v-get validationModel.serviceContract "date" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-serviceContract-date=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.serviceContract "date" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.serviceContract.validityPeriod-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=true
+      value=model.serviceContract.validityPeriod
+      class=(if (v-get validationModel.serviceContract "validityPeriod" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-serviceContract-validityPeriod=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.serviceContract "validityPeriod" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.model-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.model
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="model"
+      projection="МодельОборудованияL"
+      title=(t "forms.data-line-test-gen270624-оборудование-e.model-caption")
+      readonly=readonly
+      componentName="modelLookup"
+      class=(if (v-get validationModel "model" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-model=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "model" "message")}}
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=true
+      value=model.model.manufacturer.name
+      class=(if (v-get validationModel.model.manufacturer "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-оборудование-e.model.manufacturer.name-caption")
+      data-test-data-line-test-gen270624-оборудование-e-model-manufacturer-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.model.manufacturer "name" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.supplyContract-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.supplyContract
+      displayAttributeName="number"
+      autocomplete=true
+      relationName="supplyContract"
+      projection="ДоговорL"
+      title=(t "forms.data-line-test-gen270624-оборудование-e.supplyContract-caption")
+      readonly=readonly
+      componentName="supplyContractLookup"
+      class=(if (v-get validationModel "supplyContract" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-supplyContract=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "supplyContract" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.supplyContract.date-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=true
+      value=model.supplyContract.date
+      class=(if (v-get validationModel.supplyContract "date" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-supplyContract-date=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.supplyContract "date" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.supplyContract.validityPeriod-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=true
+      value=model.supplyContract.validityPeriod
+      class=(if (v-get validationModel.supplyContract "validityPeriod" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-supplyContract-validityPeriod=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel.supplyContract "validityPeriod" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-оборудование-e.location-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.location
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="location"
+      projection="РасположениеL"
+      title=(t "forms.data-line-test-gen270624-оборудование-e.location-caption")
+      readonly=readonly
+      componentName="locationLookup"
+      class=(if (v-get validationModel "location" "isInvalid") "error")
+      data-test-data-line-test-gen270624-оборудование-e-location=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "location" "message")}}
+  </div>
+</form>

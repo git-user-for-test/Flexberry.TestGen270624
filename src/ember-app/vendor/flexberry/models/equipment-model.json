@@ -1,0 +1,120 @@
+﻿{
+  "name": "EquipmentModel",
+  "modelName": "equipment-model",
+  "className": "МодельОборудования",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "manufacturer",
+      "relatedTo": "organization",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "documents",
+      "relatedTo": "document-to-the-model",
+      "inverse": "equipmentModel"
+    }
+  ],
+  "projections": [
+    {
+      "name": "МодельОборудованияE",
+      "modelName": "equipment-model",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Наименование",
+          "lookupValueField": "name",
+          "relationName": "Manufacturer",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Наименование производителя",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Производитель",
+          "name": "manufacturer",
+          "relatedTo": "organization",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ДокументКМоделиE",
+          "caption": "Документы",
+          "name": "documents",
+          "relatedTo": "document-to-the-model",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "МодельОборудованияL",
+      "modelName": "equipment-model",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Manufacturer",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Производитель",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Производитель",
+          "name": "manufacturer",
+          "relatedTo": "organization",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

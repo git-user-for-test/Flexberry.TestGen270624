@@ -1,0 +1,132 @@
+﻿{
+  "name": "MaintenanceProgram",
+  "modelName": "maintenance-program",
+  "className": "ПрограммаТО",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "periodicity",
+      "relatedTo": "periodicity",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "purposeOfTheMaintenanceModel",
+      "relatedTo": "purpose-of-the-maintenance-model",
+      "inverse": "maintenanceProgram"
+    },
+    {
+      "name": "maintenanceOperation",
+      "relatedTo": "maintenance-operation",
+      "inverse": "maintenanceProgram"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ПрограммаТОE",
+      "modelName": "maintenance-program",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Наименование",
+          "lookupValueField": "name",
+          "relationName": "Periodicity",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Периодичность",
+          "name": "periodicity",
+          "relatedTo": "periodicity",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "НазначениеТОДляМоделиE",
+          "caption": "Модели оборудования",
+          "name": "purposeOfTheMaintenanceModel",
+          "relatedTo": "purpose-of-the-maintenance-model",
+          "inverse": null
+        },
+        {
+          "projectionName": "ОперацияТОE",
+          "caption": "Операции ТО",
+          "name": "maintenanceOperation",
+          "relatedTo": "maintenance-operation",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ПрограммаТОL",
+      "modelName": "maintenance-program",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Periodicity",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Периодичность",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Периодичность",
+          "name": "periodicity",
+          "relatedTo": "periodicity",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

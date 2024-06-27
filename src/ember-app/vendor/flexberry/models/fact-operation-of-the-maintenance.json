@@ -1,0 +1,120 @@
+﻿{
+  "name": "FactOperationOfTheMaintenance",
+  "modelName": "fact-operation-of-the-maintenance",
+  "className": "ФактОперацияТО",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "executionDate",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "successfully",
+      "type": "boolean",
+      "flexberryType": "bool",
+      "notNull": true,
+      "defaultValue": "false",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "maintenanceOperation",
+      "relatedTo": "maintenance-operation",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": false,
+      "name": "scheduledMaintenanceOperation",
+      "relatedTo": "scheduled-maintenance-operation",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "factOfTheMaintenance",
+      "relatedTo": "fact-of-the-maintenance",
+      "inverse": "factOperationOfTheMaintenance"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ФактОперацияТОE",
+      "modelName": "fact-operation-of-the-maintenance",
+      "attrs": [
+        {
+          "name": "executionDate",
+          "caption": "Дата выполнения",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "successfully",
+          "caption": "Успешно",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Наименование",
+          "lookupValueField": "name",
+          "relationName": "MaintenanceOperation",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 3
+            }
+          ],
+          "index": 2,
+          "type": "standard",
+          "caption": "Операция ТО",
+          "name": "maintenanceOperation",
+          "relatedTo": "maintenance-operation",
+          "inverse": null
+        },
+        {
+          "lookupValue": "ДатаВыполнения",
+          "lookupValueField": "executionDate",
+          "relationName": "ScheduledMaintenanceOperation",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "executionDate",
+              "caption": "Дата выполнения",
+              "hidden": true,
+              "index": 5
+            }
+          ],
+          "index": 4,
+          "type": "standard",
+          "caption": "План операция ТО",
+          "name": "scheduledMaintenanceOperation",
+          "relatedTo": "scheduled-maintenance-operation",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

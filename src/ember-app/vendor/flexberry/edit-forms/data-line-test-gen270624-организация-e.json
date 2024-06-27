@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Организация",
+  "name": "DataLineTestGen270624ОрганизацияE",
+  "className": "ОрганизацияE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "organization",
+      "modelProjection": "ОрганизацияE"
+    }
+  ]
+}

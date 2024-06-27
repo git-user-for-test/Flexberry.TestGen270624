@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Periodicity",
+      "projection": "PeriodicityL",
+      "detailModelName": null
+    },
+    {
+      "master": "equipmentModel",
+      "displayAttributeName": "name",
+      "required": true,
+      "relationName": "PurposeOfTheMaintenanceModel.EquipmentModel",
+      "projection": "МодельОборудованияL",
+      "detailModelName": "purpose-of-the-maintenance-model"
+    }
+  ],
+  "external": false,
+  "caption": "Программа ТО",
+  "name": "DataLineTestGen270624ПрограммаТОE",
+  "className": "ПрограммаТОE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "maintenance-program",
+      "modelProjection": "ПрограммаТОE"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Type",
+      "projection": "ТипОборудованияL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Status",
+      "projection": "СтатусОборудованияL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Accountable",
+      "projection": "СотрудникL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "ServiceContract",
+      "projection": "ДоговорL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Model",
+      "projection": "МодельОборудованияL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "SupplyContract",
+      "projection": "ДоговорL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Location",
+      "projection": "РасположениеL",
+      "detailModelName": null
+    }
+  ],
+  "external": false,
+  "caption": "Оборудование",
+  "name": "DataLineTestGen270624ОборудованиеE",
+  "className": "ОборудованиеE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "hardware",
+      "modelProjection": "ОборудованиеE"
+    }
+  ]
+}

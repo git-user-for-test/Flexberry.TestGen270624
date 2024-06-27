@@ -1,0 +1,60 @@
+﻿{
+  "name": "PurposeOfTheMaintenanceModel",
+  "modelName": "purpose-of-the-maintenance-model",
+  "className": "НазначениеТОДляМодели",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "equipmentModel",
+      "relatedTo": "equipment-model",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "maintenanceProgram",
+      "relatedTo": "maintenance-program",
+      "inverse": "purposeOfTheMaintenanceModel"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "НазначениеТОДляМоделиE",
+      "modelName": "purpose-of-the-maintenance-model",
+      "attrs": [],
+      "belongsTo": [
+        {
+          "lookupValue": "Наименование",
+          "lookupValueField": "name",
+          "relationName": "EquipmentModel",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "name",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 1
+            }
+          ],
+          "index": 0,
+          "type": "standard",
+          "caption": "Модель оборудования",
+          "name": "equipmentModel",
+          "relatedTo": "equipment-model",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

@@ -1,0 +1,15 @@
+﻿{
+  "newForm": null,
+  "editForm": null,
+  "external": false,
+  "caption": "Плановая операция ТО",
+  "name": "DataLineTestGen270624ScheduledMaintenanceOperationL",
+  "className": "ScheduledMaintenanceOperationL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "scheduled-maintenance-operation",
+      "modelProjection": "ПланОперацияТОL"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+import DataLineTestGen270624РасположениеEController from '../data-line-test-gen270624-расположение-e';
+
+var DataLineTestGen270624РасположениеENewController = DataLineTestGen270624РасположениеEController;
+export default DataLineTestGen270624РасположениеENewController;

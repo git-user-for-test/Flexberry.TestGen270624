@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-test-gen270624-расположение-e",
+  "editForm": "data-line-test-gen270624-расположение-e",
+  "external": false,
+  "caption": "Расположение",
+  "name": "DataLineTestGen270624РасположениеL",
+  "className": "РасположениеL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "location",
+      "modelProjection": "РасположениеL"
+    }
+  ]
+}

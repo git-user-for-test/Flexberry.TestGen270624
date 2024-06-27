@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Расположение",
+  "name": "DataLineTestGen270624РасположениеE",
+  "className": "РасположениеE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "location",
+      "modelProjection": "РасположениеE"
+    }
+  ]
+}

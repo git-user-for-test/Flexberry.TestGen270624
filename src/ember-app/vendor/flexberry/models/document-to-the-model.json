@@ -1,0 +1,63 @@
+﻿{
+  "name": "DocumentToTheModel",
+  "modelName": "document-to-the-model",
+  "className": "ДокументКМодели",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "fileReference",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "equipmentModel",
+      "relatedTo": "equipment-model",
+      "inverse": "documents"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ДокументКМоделиE",
+      "modelName": "document-to-the-model",
+      "attrs": [
+        {
+          "name": "name",
+          "caption": "Наименование",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "fileReference",
+          "caption": "Ссылка на файл",
+          "hidden": false,
+          "index": 1
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

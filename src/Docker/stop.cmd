@@ -1,0 +1,1 @@
+docker-compose -p testgen270624 down

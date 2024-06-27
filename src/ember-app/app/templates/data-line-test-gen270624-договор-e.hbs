@@ -1,0 +1,95 @@
+<h3 class="ui header">{{t "forms.data-line-test-gen270624-договор-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.number
+      class=(if (v-get validationModel "number" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-договор-e.number-caption")
+      data-test-data-line-test-gen270624-договор-e-number=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "number" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-договор-e.date-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.date
+      class=(if (v-get validationModel "date" "isInvalid") "error")
+      data-test-data-line-test-gen270624-договор-e-date=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "date" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-договор-e.validityPeriod-caption"}}</label>
+    {{flexberry-simpledatetime
+      type="date"
+      readonly=readonly
+      value=model.validityPeriod
+      class=(if (v-get validationModel "validityPeriod" "isInvalid") "error")
+      data-test-data-line-test-gen270624-договор-e-validityPeriod=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "validityPeriod" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-договор-e.buyer-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.buyer
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="buyer"
+      projection="ОрганизацияL"
+      title=(t "forms.data-line-test-gen270624-договор-e.buyer-caption")
+      readonly=readonly
+      componentName="buyerLookup"
+      class=(if (v-get validationModel "buyer" "isInvalid") "error")
+      data-test-data-line-test-gen270624-договор-e-buyer=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "buyer" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-договор-e.seller-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.seller
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="seller"
+      projection="ОрганизацияL"
+      title=(t "forms.data-line-test-gen270624-договор-e.seller-caption")
+      readonly=readonly
+      componentName="sellerLookup"
+      class=(if (v-get validationModel "seller" "isInvalid") "error")
+      data-test-data-line-test-gen270624-договор-e-seller=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "seller" "message")}}
+  </div>
+</form>

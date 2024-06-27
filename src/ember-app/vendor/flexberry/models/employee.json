@@ -1,0 +1,96 @@
+﻿{
+  "name": "Employee",
+  "modelName": "employee",
+  "className": "Сотрудник",
+  "nameSpace": "",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "name",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "patronymic",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "surname",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": true,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "СотрудникE",
+      "modelName": "employee",
+      "attrs": [
+        {
+          "name": "surname",
+          "caption": "Фамилия",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "name",
+          "caption": "Имя",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "patronymic",
+          "caption": "Отчество",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    },
+    {
+      "name": "СотрудникL",
+      "modelName": "employee",
+      "attrs": [
+        {
+          "name": "surname",
+          "caption": "Фамилия",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "name",
+          "caption": "Имя",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "patronymic",
+          "caption": "Отчество",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

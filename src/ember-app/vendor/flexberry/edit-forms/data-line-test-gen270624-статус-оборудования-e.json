@@ -1,0 +1,14 @@
+﻿{
+  "propertyLookup": [],
+  "external": false,
+  "caption": "Статус оборудования",
+  "name": "DataLineTestGen270624СтатусОборудованияE",
+  "className": "СтатусОборудованияE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "equipment-status",
+      "modelProjection": "СтатусОборудованияE"
+    }
+  ]
+}

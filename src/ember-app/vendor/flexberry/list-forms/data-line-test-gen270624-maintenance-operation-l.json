@@ -1,0 +1,15 @@
+﻿{
+  "newForm": null,
+  "editForm": null,
+  "external": false,
+  "caption": "Операция ТО",
+  "name": "DataLineTestGen270624MaintenanceOperationL",
+  "className": "MaintenanceOperationL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "maintenance-operation",
+      "modelProjection": "ОперацияТОL"
+    }
+  ]
+}

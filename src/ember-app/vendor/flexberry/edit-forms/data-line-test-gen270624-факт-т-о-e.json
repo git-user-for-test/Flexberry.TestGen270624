@@ -1,0 +1,47 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Equipment",
+      "projection": "ОборудованиеL",
+      "detailModelName": null
+    },
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "MaintenancePlan",
+      "projection": "ПланТОL",
+      "detailModelName": null
+    },
+    {
+      "master": "maintenanceOperation",
+      "displayAttributeName": "name",
+      "required": true,
+      "relationName": "FactOperationOfTheMaintenance.MaintenanceOperation",
+      "projection": "ОперацияТОL",
+      "detailModelName": "fact-operation-of-the-maintenance"
+    },
+    {
+      "master": "scheduledMaintenanceOperation",
+      "displayAttributeName": "executionDate",
+      "required": false,
+      "relationName": "FactOperationOfTheMaintenance.ScheduledMaintenanceOperation",
+      "projection": "ПланОперацияТОL",
+      "detailModelName": "fact-operation-of-the-maintenance"
+    }
+  ],
+  "external": false,
+  "caption": "Факт ТО",
+  "name": "DataLineTestGen270624ФактТОE",
+  "className": "ФактТОE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "fact-of-the-maintenance",
+      "modelProjection": "ФактТОE"
+    }
+  ]
+}

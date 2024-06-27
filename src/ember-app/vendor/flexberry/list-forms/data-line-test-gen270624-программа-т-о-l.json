@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-test-gen270624-программа-т-о-e",
+  "editForm": "data-line-test-gen270624-программа-т-о-e",
+  "external": false,
+  "caption": "Программа ТО",
+  "name": "DataLineTestGen270624ПрограммаТОL",
+  "className": "ПрограммаТОL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "maintenance-program",
+      "modelProjection": "ПрограммаТОL"
+    }
+  ]
+}

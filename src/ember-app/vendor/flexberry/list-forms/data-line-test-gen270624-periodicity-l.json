@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "data-line-test-gen270624-periodicity-e",
+  "editForm": "data-line-test-gen270624-periodicity-e",
+  "external": false,
+  "caption": "Периодичность",
+  "name": "DataLineTestGen270624PeriodicityL",
+  "className": "PeriodicityL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "periodicity",
+      "modelProjection": "PeriodicityL"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+<h3 class="ui header">{{t "forms.data-line-test-gen270624-модель-оборудования-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.name
+      class=(if (v-get validationModel "name" "isInvalid") "error")
+      label=(t "forms.data-line-test-gen270624-модель-оборудования-e.name-caption")
+      data-test-data-line-test-gen270624-модель-оборудования-e-name=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "name" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-модель-оборудования-e.manufacturer-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.manufacturer
+      displayAttributeName="name"
+      autocomplete=true
+      relationName="manufacturer"
+      projection="ОрганизацияL"
+      title=(t "forms.data-line-test-gen270624-модель-оборудования-e.manufacturer-caption")
+      readonly=readonly
+      componentName="manufacturerLookup"
+      class=(if (v-get validationModel "manufacturer" "isInvalid") "error")
+      data-test-data-line-test-gen270624-модель-оборудования-e-manufacturer=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "manufacturer" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.data-line-test-gen270624-модель-оборудования-e.documents-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="documentsGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.documents
+      content=model.documents
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "documents" "isInvalid") "error")
+      data-test-data-line-test-gen270624-модель-оборудования-e-documents=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "documents" "message")}}
+  </div>
+</form>

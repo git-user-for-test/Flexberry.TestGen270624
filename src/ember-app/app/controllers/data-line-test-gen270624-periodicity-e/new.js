@@ -1,0 +1,4 @@
+import DataLineTestGen270624PeriodicityEController from '../data-line-test-gen270624-periodicity-e';
+
+var DataLineTestGen270624PeriodicityENewController = DataLineTestGen270624PeriodicityEController;
+export default DataLineTestGen270624PeriodicityENewController;
